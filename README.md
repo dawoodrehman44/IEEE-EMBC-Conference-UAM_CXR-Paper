@@ -1,7 +1,7 @@
 # UAM-CXR: Uncertainty-Aware Multimodal Learning for Chest X-ray Classification via Cross-Modal Conformal Prediction
 
 <p align="center">
-  <img src="UAM_CXR_Architecture_Plot.png" alt="UAM-CXR Framework Architecture" width="1000"/>
+  <img src="Figures/UAM_CXR_Architecture_Plot.png" alt="UAM-CXR Framework Architecture" width="1000"/>
 </p>
 ---
 
