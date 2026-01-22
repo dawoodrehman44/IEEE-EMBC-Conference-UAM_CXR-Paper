@@ -1,0 +1,14 @@
+dependencies:
+  - python=3.12
+  - numpy
+  - pandas
+  - matplotlib
+  - seaborn
+  - scipy
+  - scikit-learn
+  - pillow
+  - pytorch
+  - torchvision
+  - pip
+  - pip:
+      # Any pip-only packages you need

@@ -1,0 +1,65 @@
+# ============================================================================
+# CONFIGURATION
+# ============================================================================
+class Config:
+    # Paths
+    checkpoint_dir = ""
+    cleaned_data_dir = ""
+    image_root = ""
+    
+    # Training
+    resume_epoch = None
+    total_epochs = 150
+    batch_size = 32
+    learning_rate = 1e-4
+    weight_decay = 1e-5
+    
+    # Model architecture
+    img_size = 320
+    vision_embed_dim = 768
+    text_embed_dim = 512
+    shared_embed_dim = 512
+    num_heads = 8
+    dropout = 0.1
+    
+    # Loss weights (NEW!)
+    lambda_cls = 1.0        # Classification loss
+    lambda_contrast = 0.3   # Contrastive loss
+    lambda_conformal = 0.2  # Conformal coverage loss
+    lambda_uncertainty = 0.01  # Uncertainty regularization
+    
+    # Conformal prediction
+    conformal_alpha = 0.15
+    calibration_split = 0.2
+    
+    # Uncertainty quantification (NEW!)
+    mc_samples = 10  # Monte Carlo samples for epistemic uncertainty
+    
+    # CheXpert labels
+    label_cols = [
+        'No Finding', 'Enlarged Cardiomediastinum', 'Cardiomegaly',
+        'Lung Opacity', 'Lung Lesion', 'Edema', 'Consolidation',
+        'Pneumonia', 'Atelectasis', 'Pneumothorax', 'Pleural Effusion',
+        'Pleural Other', 'Fracture', 'Support Devices'
+    ]
+    num_classes = 14
+     # Focal loss parameters
+    focal_alpha = 0.25
+    focal_gamma = 2.0
+    
+    # Set size parameters
+    base_set_size = 3  # Minimum set size for all predictions
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+config = Config()
+os.makedirs(config.checkpoint_dir, exist_ok=True)
+os.makedirs(os.path.join(config.checkpoint_dir, "plots"), exist_ok=True)
+
+print("="*80)
+print("UAM-CXR ENHANCED: Learnable Uncertainty-Aware Multimodal Model")
+print("="*80)
+print(f"Device: {config.device}")
+print(f"NEW: Learnable conformal scoring ✓")
+print(f"NEW: Contrastive learning ✓")
+print(f"NEW: Uncertainty-aware training ✓")
+print("="*80 + "\n")
