@@ -58,9 +58,7 @@ Our framework consists of these critical components:
 │   ├── loss_function.py
 │   └── model.py                  
 ├── Visualization/
-│   ├── metrics_tracker.py                
-│   ├── calibration.py                     
-│   └── variational_linear.py           
+│   └── metrics_tracker.py                          
 ├── main.py
 ├── train.py
 ├── valid.py                                 
@@ -75,7 +73,7 @@ Our framework consists of these critical components:
 ### Installation
 ```bash
 # Clone repository
-git clone https://github.com/dawoodrehman44/IEEE-EMBC-Conference-UAM_CXR-Paper.git
+git clone https://github.com/dawoodrehman44/EMBC_UAM_CXR.git
 cd IEEE_EMBC_2026
 
 ```
